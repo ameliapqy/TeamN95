@@ -42,7 +42,7 @@ def test():
     print("Now I have " + user.supplyNumber + " " + user.supplyType)
 
 def findClosest(addrMap):
-    minDist = max
+    minDist = getDistance(origin, destination)
     for addr in addrList
-
+        currDist = 
     return uid
