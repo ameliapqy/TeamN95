@@ -19,11 +19,16 @@ def getDistance(origin, destination):
 
 #convert string distance to double
 def convertDist(distString):
+<<<<<<< HEAD
     #replace all commas
     distString = distString.replace(",", "")
     #find index of space before unit
     index = distString.find(" ", 0, len(distString))
     
+=======
+    #find index of space before unit
+    index = distString.find(" ", 0, len(distString))
+>>>>>>> dbe40ebef881983ba14e5d3ddbd32dae8e77e885
     return float(distString[:index])
 
 
@@ -41,9 +46,11 @@ def getCoord(addr):
     legs = routes[0]['legs']
     return [legs[0]['start_location']['lat'],legs[0]['start_location']['lng']]
 
-origin = "3411 Chestnut St, PA"
-destination = "3401 Grays Ferry Ave, PA"
-destination2 = "New York"
+def test3():
+    origin = "3411 Chestnut St, PA"
+    destination = "3401 Grays Ferry Ave, PA"
+    destination2 = "New York"
+    print(getDistance(origin, destination2))
+    print(getCoord(origin))
 
-print(getDistance(origin, destination2))
-print(getCoord(origin))
+#test3()

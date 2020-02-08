@@ -46,9 +46,18 @@ def findClosest(myAddr, addrMap):
             minuid = uid
     return minuid
 
-def test():
+def testUser():
     user = User()
     user.intro()
     print("I have " + user.supplyNumber + " " + user.supplyType)
     user.give("mask", 2)
     print("Now I have " + user.supplyNumber + " " + user.supplyType)    
+
+def testFindClosest():
+    currLoc = "3401 Grays Ferry Ave, PA"
+    Loc1 = "3411 Chestnut St, PA"
+    Loc2 = "New York"
+    addrMap = {1:Loc2, 2:Loc1}
+    return findClosest(currLoc, addrMap)
+
+print(testFindClosest())
