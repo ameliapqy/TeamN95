@@ -7,7 +7,7 @@ class User:
         self.type = "donor"
         self.name = "Llama"
         self.supplyType = "mask"
-        self.supplyNumber = "8"
+        self.supplyNumber = 1
         self.addr = "3411 Chestnut Street"
         self.tel = "6786467287"
         self.email = "pqy@seas.upenn.edu"

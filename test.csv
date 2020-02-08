@@ -1,3 +1,7 @@
 usrid,usrtype,usrname,spltype,number,addr,tel,email,info
-1,donor,Llama,mask,8,"3411 Chestnut St",6786467287,pqy@seas.upenn.edu,HI
+1,donor,Llama,mask,-8,"3411 Chestnut St",6786467287,pqy@seas.upenn.edu,HI
 0,donor,Estee,mask,6,"3300 Walnut St",2158987246,estee@seas.upenn.edu,HI
+3,donor,Llama,mask,8,"3411 Chestnut Street",6786467287,pqy@seas.upenn.edu,Hi
+4,donor,Llama,mask,8,"3411 Chestnut Street",6786467287,pqy@seas.upenn.edu,Hi
+5,donor,Llama,mask,8,"3411 Chestnut Street",6786467287,pqy@seas.upenn.edu,Hi
+6,donor,Llama,mask,8,"3411 Chestnut Street",6786467287,pqy@seas.upenn.edu,Hi

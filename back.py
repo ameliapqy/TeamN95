@@ -43,7 +43,7 @@ def addEntry(user):
                      spltype = copy.deepcopy(user.supplyType),
                      number = copy.deepcopy(user.supplyNumber),
                      addr = copy.deepcopy(user.addr),
-                     tel = copy.deepcopy(user.tel),
+                     tel = copy.deepcopy(int(user.tel)),
                      email = copy.deepcopy(user.email),
                      info = copy.deepcopy(user.info))
     db.session.add(newEntry)
@@ -74,13 +74,20 @@ def returnLocList():
 # A seeker type user object is passed in
 # A usrid is returned
 def returnClosestLoc(seeker):
+    addEntry(seeker)
     skaddr = seeker.addr
     locs = Entry.query.filter_by(usrtype="donor").all()
     usrids = [entry.usrid for entry in locs]
     addrs = [entry.addr for entry in locs]
     dics = { usrids[i] : addrs[i] for i in range(len(addrs))}
     print(len(dics))
-    return findClosest(skaddr, dics)
+    usrid = findClosest(skaddr, dics)
+    entry = Entry.query.filter_by(usrid=usrid).first()
+    curnum = copy.deepcopy(entry.number)
+    entry.number = curnum - int(seeker.supplyNumber)
+    db.session.commit()
+    print("Donor entry changed")
+    return usrid
 
 # @app.route("/")
 # def home():
