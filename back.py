@@ -3,9 +3,11 @@ from flask import Flask
 from flask import g
 from flask_sqlalchemy import SQLAlchemy
 from user import *
+from main import app
 import copy 
+from GoogleAPI import convertDist
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///info.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -31,7 +33,7 @@ def editEntry(user):
     entry = Entry.query.filter_by(usrid=user.uid).first()
     entry.number = copy.deepcopy(user.supplyNumber)
     db.session.commit()
-    return "Entry added"
+    return "Entry changed"
 
 def addEntry(user):
     usrid = Entry.query.count() + 1
@@ -63,13 +65,33 @@ def entrytoUser(entry):
     newuser.setUid(uid)
     return newuser
 
-@app.route("/")
-def home():
-    # print("Total number of user entries is", Entry.query.count())
-    # return "Done"
-    entry = Entry.query.filter_by(usrid=0).first()
-    addEntry(entrytoUser(entry))
-    return "Entry added"
+# a list of tuples of [lat, lon] is returned
+def returnLocList():
+    locs = Entry.query.filter_by(spltype="donor").all()
+    loccoor = [getCoord(entry.addr) for entry in locs]
+    return loccoor
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# A seeker type user object is passed in
+# A usrid is returned
+def returnClosestLoc(seeker):
+    skaddr = seeker.addr
+    locs = Entry.query.filter_by(usrtype="donor").all()
+    usrids = [entry.usrid for entry in locs]
+    addrs = [entry.addr for entry in locs]
+    dics = { usrids[i] : addrs[i] for i in range(len(addrs))}
+    print(len(dics))
+    return findClosest(skaddr, dics)
+
+# @app.route("/")
+# def home():
+#     # print("Total number of user entries is", Entry.query.count())
+#     # return "Done"
+#     # entry = Entry.query.filter_by(usrid=0).first()
+#     # addEntry(entrytoUser(entry))
+#     # return "Entry added"
+#     seeker = User()
+#     print(returnClosestLoc(seeker))
+#     return Entry.query.filter_by(usrid = returnClosestLoc(seeker)).first().addr
+
+# if __name__ == "__main__":
+#     app.run(debug=True)

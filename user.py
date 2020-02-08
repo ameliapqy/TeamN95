@@ -1,4 +1,4 @@
-from googleAPI import *
+from GoogleAPI import *
 
 #read JSON file to objects
 class User:
@@ -35,8 +35,6 @@ class User:
         self.supplyNumber = str(num + n)
     
 
-
-
 def findClosest(myAddr, addrMap):
     minDist = float("inf")
     minuid = -1
@@ -46,7 +44,7 @@ def findClosest(myAddr, addrMap):
         if currDist < minDist:
             minDist = currDist
             minuid = uid
-    return uid
+    return minuid
 
 def test():
     user = User()
