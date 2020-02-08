@@ -1,3 +1,5 @@
+from googleAPI import *
+
 #read JSON file to objects
 class User:
     def __init__(self):
@@ -32,17 +34,23 @@ class User:
         num = int(self.supplyNumber)
         self.supplyNumber = str(num + n)
     
-    def getDistance(user):
+
+
+
+def findClosest(myAddr, addrMap):
+    minDist = float("inf")
+    minuid = -1
+    for uid in addrMap:
+        dest = addrMap[uid]
+        currDist = getDistance(myAddr, dest)
+        if currDist < minDist:
+            minDist = currDist
+            minuid = uid
+    return uid
 
 def test():
     user = User()
     user.intro()
     print("I have " + user.supplyNumber + " " + user.supplyType)
     user.give("mask", 2)
-    print("Now I have " + user.supplyNumber + " " + user.supplyType)
-
-def findClosest(addrMap):
-    minDist = getDistance(origin, destination)
-    for addr in addrList
-        currDist = 
-    return uids
+    print("Now I have " + user.supplyNumber + " " + user.supplyType)    
