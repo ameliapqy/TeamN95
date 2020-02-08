@@ -19,16 +19,11 @@ def getDistance(origin, destination):
 
 #convert string distance to double
 def convertDist(distString):
-<<<<<<< HEAD
     #replace all commas
     distString = distString.replace(",", "")
     #find index of space before unit
     index = distString.find(" ", 0, len(distString))
     
-=======
-    #find index of space before unit
-    index = distString.find(" ", 0, len(distString))
->>>>>>> dbe40ebef881983ba14e5d3ddbd32dae8e77e885
     return float(distString[:index])
 
 
