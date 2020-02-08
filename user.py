@@ -11,8 +11,8 @@ class User:
         self.email = "pqy@seas.upenn.edu"
         self.info = "Hi"
     
-    def setAll(self, type, name, supplyT, supplyN, addr, tel, email, info = "N/A"):
-        self.type = type
+    def setAll(self, usrtype, name, supplyT, supplyN, addr, tel, email, info = "N/A"):
+        self.type = usrtype
         self.name = name
         self.supplyType = supplyT
         self.supplyNumber = int(supplyN)
@@ -20,6 +20,9 @@ class User:
         self.tel = tel
         self.email = email
         self.info = info
+    
+    def setUid(self, uid):
+        self.uid = uid
     
     def intro(self):
         print("Hello! I'm " + self.name + " and I'm a " + self.type)
