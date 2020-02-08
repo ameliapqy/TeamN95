@@ -14,7 +14,13 @@ def getDistance(origin, destination):
     if len(routes)<0:
         return "no valid route"
     legs = routes[0]['legs']
-    return legs[0]['distance']['text']
+    distStr = legs[0]['distance']['text']
+    return convertDist(distStr)
+
+#convert string distance to double
+def convertDist(distString):
+    return float(distString[:3])
+
 
 def getCoord(addr):
     endpoint = 'https://maps.googleapis.com/maps/api/directions/json?'
@@ -32,6 +38,7 @@ def getCoord(addr):
 
 origin = "3411 Chestnut St, PA"
 destination = "3401 Grays Ferry Ave, PA"
+destination2 = "New York"
 
-print(getDistance(origin, destination))
+print(getDistance(origin, destination2))
 print(getCoord(origin))

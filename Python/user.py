@@ -40,3 +40,9 @@ def test():
     print("I have " + user.supplyNumber + " " + user.supplyType)
     user.give("mask", 2)
     print("Now I have " + user.supplyNumber + " " + user.supplyType)
+
+def findClosest(addrMap):
+    minDist = max
+    for addr in addrList
+
+    return uid
