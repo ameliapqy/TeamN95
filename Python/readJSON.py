@@ -1,10 +1,10 @@
 #read JSON string into object to store into database
 import json
-import comm.py
+from user import *
 
 #get json string from front end, sample string placeholder for now.
-var jsonString = '''{
-    		"type": "donor"
+jsonString = '''{
+    		"type": "donor",
             "name": "Llama",
             "supplyType": "mask",
     		"supplyNumber": 1,
@@ -12,12 +12,12 @@ var jsonString = '''{
     		"tel": "6786467287",
     		"email": "pqy@seas.upenn.edu",
     		"info": "Hi! I'm manufacturing N95 mask please contact me through tel/email if needed"
-    }'''
+            }'''
 
-
-json.loads(dict, jsonString)
-
+dict = json.loads(jsonString)
+#print(dict)
 #parse dict into User objects
-    currUser = User(dict[type], dict[supplyNumber], dict[supplyType], dict[addr], dict[tel], dict[email],dict[info])
-
+currUser = User()
+currUser.setAll(dict['type'], dict['name'], dict['supplyType'], dict['supplyNumber'], dict['addr'], dict['tel'], dict['email'],dict['info'])
+currUser.intro()
 #user into database

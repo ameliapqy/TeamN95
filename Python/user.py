@@ -1,7 +1,7 @@
 #read JSON file to objects
 class User:
     def __init__(self):
-        self.id = "-1"
+        self.uid = "-1"
         self.type = "donor"
         self.name = "Llama"
         self.supplyType = "mask"
@@ -11,8 +11,7 @@ class User:
         self.email = "pqy@seas.upenn.edu"
         self.info = "Hi"
     
-    def setAll(type, name, supplyT, supplyN, addr, tel, email, info = "N/A"):
-        self.id = int(id)
+    def setAll(self, type, name, supplyT, supplyN, addr, tel, email, info = "N/A"):
         self.type = type
         self.name = name
         self.supplyType = supplyT
@@ -34,7 +33,7 @@ class User:
         self.supplyNumber = str(num + n)
 
 user = User()
-user.intro()
+#user.intro()
 print("I have " + user.supplyNumber + " " + user.supplyType)
 user.give("mask", 2)
 print("Now I have " + user.supplyNumber + " " + user.supplyType)

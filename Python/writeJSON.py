@@ -1,20 +1,21 @@
 #write user object into JSON string to process & display on website
 import json
-import comm.py
+from user import *
 
-user = User()
+currUser = User()
+print(currUser.type)
 dict = {
-    "id": user.id
-    "type":user.type,
-    "name": user.name,
-    "supplyType": user.supplyType,
-    "supplyNumber": user.supplyNumber,
-    "addr": user.addr,
-    "tel": user.tel,
-    "email": user.email,
-    "info": user.info
+    "uid": currUser.uid,
+    "type": currUser.type,
+    "name": currUser.name,
+    "supplyType": currUser.supplyType,
+    "supplyNumber": currUser.supplyNumber,
+    "addr": currUser.addr,
+    "tel": currUser.tel,
+    "email": currUser.email,
+    "info": currUser.info
 }
-    userString = json.dumps(dict)
-    print(userString)
+userString = json.dumps(dict)
+print(userString)
 
 
