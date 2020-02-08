@@ -2,6 +2,13 @@
 import json
 from user import *
 
+def JSONToObject(jsonString):
+    dict = json.loads(jsonString)
+    currUser = User()
+    currUser.setAll(dict['type'], dict['name'], dict['supplyType'], dict['supplyNumber'], dict['addr'], dict['tel'], dict['email'],dict['info'])
+    return currUser
+
+
 #get json string from front end, sample string placeholder for now.
 jsonString = '''{
     		"type": "donor",
@@ -14,10 +21,12 @@ jsonString = '''{
     		"info": "Hi! I'm manufacturing N95 mask please contact me through tel/email if needed"
             }'''
 
-dict = json.loads(jsonString)
-#print(dict)
-#parse dict into User objects
-currUser = User()
-currUser.setAll(dict['type'], dict['name'], dict['supplyType'], dict['supplyNumber'], dict['addr'], dict['tel'], dict['email'],dict['info'])
-currUser.intro()
-#user into database
+
+def test():
+    #parse dict into User objects
+    user = JSONToObject(jsonString)
+    #user.name = "Amelia"
+    user.intro()
+    #user into database
+
+#test()

@@ -3,19 +3,24 @@ import json
 from user import *
 
 currUser = User()
+currUser.type = "seeker"
 print(currUser.type)
-dict = {
-    "uid": currUser.uid,
-    "type": currUser.type,
-    "name": currUser.name,
-    "supplyType": currUser.supplyType,
-    "supplyNumber": currUser.supplyNumber,
-    "addr": currUser.addr,
-    "tel": currUser.tel,
-    "email": currUser.email,
-    "info": currUser.info
-}
-userString = json.dumps(dict)
-print(userString)
+
+def ObjectToJSON(currUser): 
+    dict = {
+        "uid": currUser.uid,
+        "type": currUser.type,
+        "name": currUser.name,
+        "supplyType": currUser.supplyType,
+        "supplyNumber": currUser.supplyNumber,
+        "addr": currUser.addr,
+        "tel": currUser.tel,
+        "email": currUser.email,
+        "info": currUser.info
+    }
+    return json.dumps(dict)
+
+def test():
+    print(ObjectToJSON(currUser))
 
 

@@ -32,10 +32,9 @@ class User:
         num = int(self.supplyNumber)
         self.supplyNumber = str(num + n)
 
-user = User()
-#user.intro()
-print("I have " + user.supplyNumber + " " + user.supplyType)
-user.give("mask", 2)
-print("Now I have " + user.supplyNumber + " " + user.supplyType)
-
-      
+def test():
+    user = User()
+    user.intro()
+    print("I have " + user.supplyNumber + " " + user.supplyType)
+    user.give("mask", 2)
+    print("Now I have " + user.supplyNumber + " " + user.supplyType)
