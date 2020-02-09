@@ -1,4 +1,5 @@
 # Team N95
+![grab-landing-page](https://github.com/qingyuanpeng/TeamN95/blob/master/medUnicorn.gif)
 ## Inspiration
 
 A virus epidemic struck Wuhan, China at the end of 2019 and the beginning of 2020. The Chinese government took action and stopped the transition system after Jan 23, 2020. Medical supplies ran out quickly in China and slowly to the world. We were sorry for the virus outbreak in China and wished to do more to help people in need.
