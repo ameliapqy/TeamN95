@@ -1,0 +1,27 @@
+Name,Assign,Date Created,Description,Done?,Status
+Link the database to flask,,"Feb 08, 2020 1:44 PM",,Yes,Data
+6. sendMessage(list of donors),Audrey Zheng,"Feb 08, 2020 9:44 AM",,Yes,Data
+11. User Class (Seeker and Donner),Qingyuan Peng,"Feb 08, 2020 9:44 AM",,Yes,Processor
+7. ObjectToJSON,Qingyuan Peng,"Feb 08, 2020 9:44 AM",,Yes,Processor
+8. entrytoObject,Audrey Zheng,"Feb 08, 2020 9:44 AM",,Yes,Data
+8.5 updateSupplyNumber,Audrey Zheng,"Feb 08, 2020 9:44 AM",,Yes,Data
+12. saveUser,Audrey Zheng,"Feb 08, 2020 9:44 AM",,Yes,Data
+10. exportAddrList,Audrey Zheng,"Feb 08, 2020 9:44 AM",,Yes,Data
+,,"Feb 08, 2020 9:44 AM",,No,
+Webpage design,lingan233@gmail.com,"Feb 08, 2020 9:54 AM",,Yes,UI
+Google Map embed,,"Feb 08, 2020 9:54 AM",,Yes,UI
+restful api,,"Feb 08, 2020 9:55 AM",,No,No Need
+Logo Design,lingan233@gmail.com,"Feb 08, 2020 9:56 AM",,Yes,UI
+JSONToObject,Qingyuan Peng,"Feb 08, 2020 1:44 PM",,Yes,Processor
+"getDistance(String start, String end)",Qingyuan Peng,"Feb 08, 2020 4:35 PM",,Yes,Processor
+"5. findClosest(String Address, Dictionary addrMap)",Qingyuan Peng,"Feb 08, 2020 9:44 AM",,Yes,Processor
+9. getCoord(String loc),Qingyuan Peng,"Feb 08, 2020 9:44 AM",,Yes,Processor
+Connect Processor to UI,,"Feb 08, 2020 6:15 PM",,No,In Progress
+Convert flask form to JSON format,Qingyuan Peng,"Feb 08, 2020 6:16 PM",,No,In Progress
+get coordinate to map,Estee Chen,"Feb 08, 2020 6:16 PM",,Yes,In Progress
+Webpage HTML+CSS Programming,Estee Chen,"Feb 08, 2020 7:23 PM",,Yes,UI
+WTForms conversion,Estee Chen,"Feb 08, 2020 7:24 PM",,No,UI
+build Flask app to link HTML to Python,Estee Chen,"Feb 08, 2020 7:25 PM",,No,UI
+"Connecting Front, End, and UI","Qingyuan Peng, Estee Chen, Audrey Zheng","Feb 08, 2020 7:26 PM",,No,In Progress
+About me page info,lingan233@gmail.com,"Feb 08, 2020 7:26 PM",,Yes,UI
+Task,,"Feb 08, 2020 9:42 AM",,No,
