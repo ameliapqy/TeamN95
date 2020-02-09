@@ -6,6 +6,7 @@ from user import *
 from main import app
 import copy 
 from GoogleAPI import convertDist
+from twilio.rest import Client
 
 # app = Flask(__name__)
 
@@ -88,6 +89,22 @@ def returnClosestLoc(seeker):
     db.session.commit()
     print("Donor entry changed")
     return usrid
+
+def sendMsg():
+    account_sid = 'AC77d2c8a2adc940b4d142bebcb52a129d'
+    auth_token = '16ce0aef9ba6b0f0517a4653259eff84'
+
+    TWILIO_PHONE_NUMBER = "+13345308504"
+    TO_NUMBER = "+16786467287"
+    client = Client(account_sid, auth_token)
+
+    message = client.messages.create(
+                     body="Thank you for being a donor",
+                     from_= TWILIO_PHONE_NUMBER,
+                     to= TO_NUMBER
+                 )
+    
+    return  "msgsent"
 
 # @app.route("/")
 # def home():
