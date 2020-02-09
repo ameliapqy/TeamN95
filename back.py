@@ -3,7 +3,7 @@ from flask import Flask
 from flask import g
 from flask_sqlalchemy import SQLAlchemy
 from user import *
-from main import app
+from ui import app
 import copy 
 from GoogleAPI import convertDist
 from twilio.rest import Client
