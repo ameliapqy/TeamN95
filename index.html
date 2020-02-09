@@ -5,12 +5,10 @@
   <meta charset="UTF-8">
   <title>N95 Emergency Medical Supply Donation and Seeking </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-  <style>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
 
-     
   <link href="https://fonts.googleapis.com/css?family=Lora|Noto+Sans|PT+Sans+Caption|PT+Sans|Teko&display=swap" rel="stylesheet">
-  </style>
+
   
 </head>
 
@@ -22,7 +20,7 @@
     <div class = "header-strip" style = "box-shadow: 3px 2px 5px grey; padding: 20px"> 
 
         
-        <div style = "width: 60px; height: 50px; margin: 40px; self-align: center; vertical-align: center">
+        <div style = "width: 60px; height: 50px; margin: 40px; vertical-align: center">
             <img src="/logo.png">
             
 
@@ -150,7 +148,15 @@
         
     <form id = "donorform" method="POST" enctype="multipart/form-data">
       <div class="row">
-        <p > Your Organization's Name:</p> <input class="input" type="text" name="Your Organization's Name"> 
+        <p > Your Organization's Name: </p> 
+        {{ form.name.label }} {{ form.name }}
+      {% if form.name.errors %}
+        <ul class="errors">
+          {% for error in form.name.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
       </div>
       <div class = "row">
         <p style = "padding-top: 20px"> Your Organization's address: </p> <input type="text" name="Your Organization's address" class="input"> 
@@ -178,7 +184,7 @@
       </div>
         
       <div class = "row" style = "padding-top : 30px">
-      <input class= "submit-button" type="submit" value="Submit" name="submit"  style = "padding-to">
+      <input class= "submit-button" type="submit" value="Submit" name="submit">
       </div>
     </form>
   </section> 
@@ -188,10 +194,10 @@
     
     </Section>   
     
- <section id="seeker-application" style ="background-color: #f6f6f5 ; padding: 40px" >
+ <section id="seeker-application">
      <a name="donor"></a>
-       <h1 style = "font-family: PT Sans Caption"> Donor Application </h1>
-    <section style = "font-family: Avenir"> 
+       <h1> Donor Application </h1>
+    <section> 
   
         
     <form id = "donorform" method="POST" enctype="multipart/form-data">
@@ -199,19 +205,19 @@
         <p > Your Organization's Name:</p> <input class="input" type="text" name="Your Organization's Name"> 
       </div>
       <div class = "row">
-        <p style = "padding-top: 20px"> Your Organization's address: </p> <input type="text" name="Your Organization's address" class="input"> 
+        <p> Your Organization's address: </p> <input type="text" name="Your Organization's address" class="input"> 
       </div>
       <div class = "row">
-        <p style = "padding-top: 20px">  Email: </p> <input type="email" name="email" class="input"> 
+        <p>  Email: </p> <input type="email" name="email" class="input"> 
       </div>
       
       <div class = "row">
-        <p style = "padding-top: 20px"> Your Phone Number:</p>  <input type="tel" name="tel" class="input">
+        <p> Your Phone Number:</p>  <input type="tel" name="tel" class="input">
       </div>
       
       <div class = "row">
           
-        <p style = "padding-top: 20px"> Supply type:</p>  
+        <p> Supply type:</p>  
         <select class="select-button" name="supply type">
         <option value="mask">mask</option>
         <option value="first_aid_kit">first-aid kit</option>
@@ -220,10 +226,10 @@
       </select>
       </div>
       <div class = "row">
-        <p style = "padding-top: 20px"> Number: </p> <input class = "input" type="number" name="# of supplies">
+        <p> Number: </p> <input class = "input" type="number" name="# of supplies">
       </div>
         
-      <div class = "row" style = "padding-top : 30px">
+    <div class = "row" style = "padding-top : 30px;">
       <input class= "submit-button" type="submit" value="Submit" name="submit"  style = "padding-to">
       </div>
     </form>
@@ -234,11 +240,11 @@
     
     </section>   
     
-     <section id="about" style ="background-color: #F6F6F6 ; padding: 40px" >
-       <h1 style = "font-family: PT Sans Caption"> About Us </h1>
+     <section id="about" >
+       <h1> About Us </h1>
         
  
-      <h2 style = "text-align: left"> Estee Chen </h2>
+      <h2 style = "text-align: left;"> Estee Chen </h2>
       <ul style="list-style-type:none">
          <li>Project Manager</li>
          <li>Front-end Programmer</li>
