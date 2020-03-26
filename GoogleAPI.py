@@ -49,3 +49,23 @@ def test3():
     print(getCoord(origin))
 
 #test3()
+
+
+
+def getDistancePrompt():
+    endpoint = 'https://maps.googleapis.com/maps/api/directions/json?'
+    apiKey = 'AIzaSyDZ3NzuWjs0Q-MB8xB7h4EzaSOFlQvIThQ'
+    origin = input("Where are you right now: ").replace(' ','+')
+    destination = input("Where do you want to go: ").replace(' ','+')
+    navRequest = 'origin={}&destination={}&key={}'.format(origin,destination,apiKey)
+    request = endpoint + navRequest
+    response = urllib.request.urlopen(request).read()
+    directions = json.loads(response)
+    routes = directions['routes']
+    if len(routes)<0:
+        return "no valid route"
+    legs = routes[0]['legs']
+    distStr = legs[0]['distance']['text']
+    print(distStr)
+
+getDistancePrompt()
