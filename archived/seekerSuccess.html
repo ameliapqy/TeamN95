@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>N95 Emergency Medical Supply Donation and Seeking </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+     
+  <link href="https://fonts.googleapis.com/css?family=Lora|Noto+Sans|PT+Sans+Caption|PT+Sans|Teko&display=swap" rel="stylesheet">
+
+  
+</head>
+    
+<body>
+
+<h1 style = "font-family: PT Sans Caption"> Hi, {{name}}  </h1>
+<h1 style = "font-family: PT Sans Caption"> Congratulations! You have added your address to the map!  </h1>
+    <section id="mymap" style ="background-color: #F6F6F6; padding: 40px" >   
+     
+    <!-- map placeholder --> 
+    
+          <!--The div element for the map -->
+        <div id="map" style = "height: 500px"></div>
+                <script>
+                // Initialize and add the map
+                function initMap() {
+                // The location of Uluru
+                  var place = {lat: 39.94, lng: -75.1954};
+                  var pennplace = {lat: 39.953885, lng: -75.193048}
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 10, center: place});
+             // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: place, map: map});
+              var marker2 = new google.maps.Marker({position: pennplace, map: map});
+            }
+                </script>
+                <!--Load the API from the specified URL
+                * The async attribute allows the browser to render the page while the API loads
+                * The key parameter will contain your own API key (which is not needed for this tutorial)
+                * The callback parameter executes the initMap() function
+                -->
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ3NzuWjs0Q-MB8xB7h4EzaSOFlQvIThQ&callback=initMap">
+                </script>
+
+    
+    </section>
+    
+    
+   
+</body>
