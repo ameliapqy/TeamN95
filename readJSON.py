@@ -6,6 +6,7 @@ def JSONToObject(jsonString):
     dict = json.loads(jsonString)
     currUser = User()
     currUser.setAll(dict['type'], dict['name'], dict['supplyType'], dict['supplyNumber'], dict['addr'], dict['tel'], dict['email'],dict['info'])
+    
     return currUser
 
 
@@ -25,8 +26,14 @@ jsonString = '''{
 def test():
     #parse dict into User objects
     user = JSONToObject(jsonString)
-    #user.name = "Amelia"
+    user.name = "Llama"
     user.intro()
     #user into database
 
-#test()
+def testPrompt():
+    #parse dict into User objects
+    user = JSONToObject(jsonString)
+    user.name = "Llama"
+    user.intro()
+    #user into database
+test()

@@ -24,3 +24,4 @@ def test():
     print(ObjectToJSON(currUser))
 
 
+test()
